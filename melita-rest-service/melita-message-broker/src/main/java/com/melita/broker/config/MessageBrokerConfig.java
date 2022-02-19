@@ -16,9 +16,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MessageBrokerConfig {
 
-    private static final String QUEUE = "melita_order_notify_queue";
-    private static final String EXCHANGE = "melita_order_notify_exchange";
-    private static final String ROUTING = "melita_route_key_ORDNOTIFY";
+    public static final String QUEUE = "melita_order_notify_queue";
+    public static final String EXCHANGE = "melita_order_notify_exchange";
+    public static final String ROUTING = "melita_route_key_ORDNOTIFY";
 
     @Bean
     public Queue queue() {
@@ -40,6 +40,7 @@ public class MessageBrokerConfig {
         return new Jackson2JsonMessageConverter();
     }
 
+    @Bean
     public AmqpTemplate template(ConnectionFactory connectionFactory) {
         final RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
         rabbitTemplate.setMessageConverter(messageConverter());
