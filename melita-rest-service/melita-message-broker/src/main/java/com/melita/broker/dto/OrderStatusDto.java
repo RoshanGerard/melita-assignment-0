@@ -1,5 +1,10 @@
 package com.melita.broker.dto;
 
+/**
+ * Order Status DTO model.
+ *
+ * @author Roshan Bolonna
+ */
 public class OrderStatusDto {
 
     private String orderId;

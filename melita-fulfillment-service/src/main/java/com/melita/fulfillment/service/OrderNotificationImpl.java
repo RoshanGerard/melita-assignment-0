@@ -9,7 +9,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
-
+/**
+ * Notify placed orders to fulfillment center.
+ *
+ * @author Roshan Bolonna
+ */
 @Component
 public class OrderNotificationImpl implements OrderNotification {
 

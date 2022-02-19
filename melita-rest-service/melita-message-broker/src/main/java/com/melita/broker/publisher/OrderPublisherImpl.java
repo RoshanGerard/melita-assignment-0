@@ -1,12 +1,16 @@
 package com.melita.broker.publisher;
 
 import com.melita.broker.config.MessageBrokerConfig;
-import com.melita.broker.dto.OrderDto;
 import com.melita.broker.dto.OrderStatusDto;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * Order notification publisher.
+ *
+ * @author Roshan Bolonna
+ */
 @Component
 public class OrderPublisherImpl implements OrderPublisher {
 
