@@ -1,9 +1,13 @@
-package com.melita.broker.dto;
+package com.melita.domain.dto;
 
-public class OrderStatusDto {
+/**
+ * Order place response DTO model.
+ *
+ * @author Roshan Bolonna
+ */
+public class OrderResponseDto {
 
     private String orderId;
-    private String status;
     private String message;
 
     public String getOrderId() {
@@ -12,14 +16,6 @@ public class OrderStatusDto {
 
     public void setOrderId(String orderId) {
         this.orderId = orderId;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getMessage() {

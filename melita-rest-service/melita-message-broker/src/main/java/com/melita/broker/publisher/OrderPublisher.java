@@ -1,6 +1,6 @@
 package com.melita.broker.publisher;
 
-import com.melita.broker.dto.OrderDto;
+import com.melita.broker.dto.OrderStatusDto;
 
 /**
  * Order publisher specification.
@@ -9,5 +9,5 @@ import com.melita.broker.dto.OrderDto;
  */
 public interface OrderPublisher {
 
-    String publishOrder(OrderDto orderDto);
+    String publishOrder(OrderStatusDto orderStatusDto);
 }

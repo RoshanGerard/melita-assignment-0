@@ -25,7 +25,7 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
         errors.add(ex.getMessage());
 
         final ErrorResponseModel errorResponse =
-                new ErrorResponseModel("Validation errors found. ", errors);
+                new ErrorResponseModel("Validation errors found. ", ex.getMessages());
 
         return new ResponseEntity(errorResponse, HttpStatus.UNPROCESSABLE_ENTITY);
     }

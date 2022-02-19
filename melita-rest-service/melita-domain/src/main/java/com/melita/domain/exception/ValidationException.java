@@ -9,6 +9,8 @@ import java.util.ArrayList;
  */
 public class ValidationException extends RuntimeException {
 
+    private ArrayList<String> messages;
+
     public ValidationException() {}
 
     public ValidationException(String message) {
@@ -16,6 +18,15 @@ public class ValidationException extends RuntimeException {
     }
 
     public ValidationException(ArrayList<String> messages) {
-        super(String.join("\n", messages));
+        super(String.join(", ", messages));
+        this.messages = messages;
+    }
+
+    public ArrayList<String> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(ArrayList<String> messages) {
+        this.messages = messages;
     }
 }

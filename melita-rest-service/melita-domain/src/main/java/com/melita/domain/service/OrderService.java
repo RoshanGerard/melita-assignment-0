@@ -1,6 +1,7 @@
 package com.melita.domain.service;
 
 import com.melita.domain.dto.OrderRequestDto;
+import com.melita.domain.dto.OrderResponseDto;
 
 /**
  * Order service specification.
@@ -9,5 +10,5 @@ import com.melita.domain.dto.OrderRequestDto;
  */
 public interface OrderService {
 
-    void notifyOrderStatus(OrderRequestDto orderRequestDto);
+    OrderResponseDto notifyOrderStatus(OrderRequestDto orderRequestDto);
 }

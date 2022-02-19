@@ -1,8 +1,5 @@
 package com.melita.domain.model;
 
-import java.sql.Date;
-import java.sql.Time;
-
 /**
  * Installation date time schedule details model.
  *
@@ -10,22 +7,22 @@ import java.sql.Time;
  */
 public class InstallationTimeScheduleModel {
 
-    private Date installDate;
-    private Time installTime;
+    private String installDate;
+    private String installTime;
 
-    public Date getInstallDate() {
+    public String getInstallDate() {
         return installDate;
     }
 
-    public void setInstallDate(Date installDate) {
+    public void setInstallDate(String installDate) {
         this.installDate = installDate;
     }
 
-    public Time getInstallTime() {
+    public String getInstallTime() {
         return installTime;
     }
 
-    public void setInstallTime(Time installTime) {
+    public void setInstallTime(String installTime) {
         this.installTime = installTime;
     }
 }
