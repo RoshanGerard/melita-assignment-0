@@ -1,6 +1,7 @@
 package com.melita.api.exception;
 
 import com.melita.api.model.ErrorResponseModel;
+import com.melita.domain.exception.ValidationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -16,10 +17,21 @@ import java.util.ArrayList;
  * @author Roshan Bolonna
  */
 @ControllerAdvice
-public class OrderExceptionHandler extends ResponseEntityExceptionHandler {
+public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
+
+    @ExceptionHandler({ValidationException.class})
+    public ResponseEntity<?> handleValidationException(ValidationException ex, WebRequest webRequest) {
+        final ArrayList<String> errors = new ArrayList<>();
+        errors.add(ex.getMessage());
+
+        final ErrorResponseModel errorResponse =
+                new ErrorResponseModel("Validation errors found. ", errors);
+
+        return new ResponseEntity(errorResponse, HttpStatus.UNPROCESSABLE_ENTITY);
+    }
 
     @ExceptionHandler({RuntimeException.class, Exception.class,})
-    public ResponseEntity handleOrderException(Exception ex, WebRequest webRequest) {
+    public ResponseEntity<?> handleCommonException(Exception ex, WebRequest webRequest) {
         final ArrayList<String> errors = new ArrayList<>();
         errors.add(ex.getMessage());
 

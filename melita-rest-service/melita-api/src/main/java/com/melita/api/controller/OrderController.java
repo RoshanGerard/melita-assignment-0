@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Roshan Bolonna
  */
 @RestController
-@RequestMapping("/acme")
+@RequestMapping("/order")
 public class OrderController {
 
     private OrderService orderService;

@@ -3,7 +3,7 @@ package com.melita.domain.exception;
 import java.util.ArrayList;
 
 /**
- * Data validation error exception specificaiton.
+ * Data validation error exception specification.
  *
  * @author Roshan Bolonna
  */
