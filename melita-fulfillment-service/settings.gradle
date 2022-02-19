@@ -13,8 +13,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'melita-rest-service'
-
-include 'melita-domain'
-include 'melita-api'
-include 'melita-message-broker'
+rootProject.name = 'melita-fullfilment-service'
+include 'message-broker'
+project(':message-broker').projectDir = new File('../melita-rest-service/melita-message-broker')
