@@ -10,7 +10,6 @@ import com.melita.domain.model.ProductServiceModel;
 import com.melita.domain.type.Product;
 import com.melita.domain.type.ProductPackage;
 import org.apache.commons.validator.routines.EmailValidator;
-import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
@@ -95,36 +94,47 @@ public class OrderProcessEngine {
                 // Validate specified product type.
                 switch (selectedProduct) {
                     case INTERNET:
-                        if (selectedPackage != ProductPackage.INTERNET_1GBPS
-                                || selectedPackage != ProductPackage.INTERNET_250MBPS) {
-                            messages.add("Selected package not valid for: " + Product.INTERNET + " product.");
+                        switch (selectedPackage) {
+                            case INTERNET_1GBPS:
+                            case INTERNET_250MBPS:
+                                break;
+                            default:
+                                messages.add("Selected package not valid for: " + Product.INTERNET + " product.");
                         }
 
                         break;
                     case MOBILE:
-                        if (selectedPackage != ProductPackage.MOBILE_PREPAID
-                                || selectedPackage != ProductPackage.MOBILE_POSTPAID) {
-                            messages.add("Selected package not valid for: " + Product.MOBILE + " product.");
+                        switch (selectedPackage) {
+                            case MOBILE_PREPAID:
+                            case MOBILE_POSTPAID:
+                                break;
+                            default:
+                                messages.add("Selected package not valid for: " + Product.MOBILE + " product.");
                         }
 
                         break;
                     case TELEPHONY:
-                        if (selectedPackage != ProductPackage.TELEPHONY_FREE_NET_CALLS
-                                || selectedPackage != ProductPackage.TELEPHONY_UNLIMITED_CALLS) {
-                            messages.add("Selected package not valid for: " + Product.TELEPHONY + " product.");
+                        switch (selectedPackage) {
+                            case TELEPHONY_FREE_NET_CALLS:
+                            case TELEPHONY_UNLIMITED_CALLS:
+                                break;
+                            default:
+                                messages.add("Selected package not valid for: " + Product.TELEPHONY + " product.");
                         }
 
                         break;
                     case TV:
-                        if (selectedPackage != ProductPackage.TV_90_CHANNELS
-                                || selectedPackage != ProductPackage.TV_140_CHANNELS) {
-                            messages.add("Selected package not valid for: " + Product.TV + " product.");
+                        switch (selectedPackage) {
+                            case TV_90_CHANNELS:
+                            case TV_140_CHANNELS:
+                                break;
+                            default:
+                                messages.add("Selected package not valid for: " + Product.TV + " product.");
                         }
 
                         break;
                     default:
                         messages.add("Invalid or unknown product type, specified product doesn't exists.");
-                        break;
                 }
             }
         }
