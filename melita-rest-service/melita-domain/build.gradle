@@ -1,12 +1,11 @@
-plugins {
-    id 'java'
+bootJar {
+    enabled = false;
 }
 
-group 'com.melita'
-version '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
+// If not define as jar, in the production
+// Main project not considered as the application
+jar {
+    enabled = true
 }
 
 dependencies {

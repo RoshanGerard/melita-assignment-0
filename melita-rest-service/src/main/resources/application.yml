@@ -1,0 +1,9 @@
+server:
+  port: 5006
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: melita-rest-service
+
