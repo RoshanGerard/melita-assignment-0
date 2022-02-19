@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/melita-api" />
             <option value="$PROJECT_DIR$/melita-domain" />
+            <option value="$PROJECT_DIR$/melita-message-broker" />
           </set>
         </option>
       </GradleProjectSettings>

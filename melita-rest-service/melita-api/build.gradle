@@ -12,6 +12,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
     implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation project(':melita-domain')
+
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
     // ****** JWT dependencies. ****** //

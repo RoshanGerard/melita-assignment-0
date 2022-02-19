@@ -17,3 +17,5 @@ rootProject.name = 'melita-rest-service'
 
 include 'melita-domain'
 include 'melita-api'
+include 'melita-message-broker'
+
