@@ -1,7 +1,6 @@
 package com.melita.domain.service;
 
 import com.melita.broker.dto.OrderDto;
-import com.melita.broker.dto.OrderStatusDto;
 import com.melita.broker.publisher.OrderPublisher;
 import com.melita.domain.dto.OrderRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
